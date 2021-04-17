@@ -22,13 +22,13 @@ class GameSprite(sprite.Sprite):
 class Player(GameSprite):
     def update(self):
         keys = key.get_pressed()
-        if keys[K_RIGHT] and self.rect.x < 500:
-            self.rect.x += self.speed
-        if keys[K_LEFT] and self.rect.x > win_width - 80:
-            self.rect.x -= self.speed
+        if keys[K_UP] and self.rect.y < 500:
+            self.rect.y += self.speed
+        if keys[K_DOWN] and self.rect.y > win_width - 80:
+            self.rect.y -= self.speed
 
-player1 = Player('platformaa.png', 5, win_height - 100, 80, 100, 10)
-player2 = Player('platformaa.png', 10, win_height - 80, 80, 100, 10)
+player1 = Player('racket.png', 5, win_height - 100, 80, 100, 10)
+player2 = Player('racket.png', 10, win_height - 80, 80, 100, 10)
 
 clock = time.Clock()
 FPS = 60
