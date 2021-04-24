@@ -43,8 +43,8 @@ font = font.Font(None, 20)
 lose1 = font.render('Player 1 LOSE!', True, (180, 0, 0))
 lose2 = font.render('Player 2 LOSE!', True, (180, 0, 0))
 
-speed_x = 3
-speed_y = 3
+speed_x = 10
+speed_y = 10
 
 clock = time.Clock()
 FPS = 60
@@ -75,6 +75,11 @@ while game:
             window.blit(lose1, (200, 200))
             game_over = True
         
+        if ball.rect.x > win_width:
+            finish = True
+            window.blit(lose2, (200, 200))
+            game_over = True
+
         racket1.reset()
         racket2.reset()
         ball.reset()
